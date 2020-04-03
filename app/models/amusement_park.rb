@@ -4,7 +4,6 @@ class AmusementPark < ApplicationRecord
   has_many :rides
 
   def ride_alphabetically_sort
-    binding.pry
     rides.order(:name)
   end
 
