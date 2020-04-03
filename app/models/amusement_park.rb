@@ -1,4 +1,5 @@
 class AmusementPark < ApplicationRecord
+  has_many :rides
 
   def ride_alphabetically_sort
     rides.order(:name)
