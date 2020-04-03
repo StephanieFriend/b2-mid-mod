@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20200403152907) do
   create_table "rides", force: :cascade do |t|
     t.string "name"
     t.integer "thrill_rating"
-    t.bigint "amusement_parks_id"
-    t.index ["amusement_parks_id"], name: "index_rides_on_amusement_parks_id"
+    t.bigint "amusement_park_id"
+    t.index ["amusement_park_id"], name: "index_rides_on_amusement_park_id"
   end
 
   add_foreign_key "ride_mechanics", "mechanics", column: "mechanics_id"
   add_foreign_key "ride_mechanics", "rides", column: "rides_id"
-  add_foreign_key "rides", "amusement_parks", column: "amusement_parks_id"
+  add_foreign_key "rides", "amusement_parks"
 end

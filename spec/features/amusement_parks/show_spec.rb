@@ -13,15 +13,12 @@ RSpec.describe 'As a visitor' do
   it 'I see the names of all rides in alphabetical order' do
     hershey = AmusementPark.create({name: 'Hershey Park',
                                  admission_price: '$50.00'})
-    racer = Ride.create({name: 'Lightning Racer',
-                      thrill_rating: 7,
-                      amusement_parks_id: hershey.id})
-    runner = Ride.create({name: 'Storm Runner',
-                       thrill_rating: 9,
-                       amusement_parks_id: hershey.id})
-    bear = Ride.create({name: 'The Great Bear',
-                     thrill_rating: 5,
-                     amusement_parks_id: hershey.id})
+    racer = hershey.rides.create({name: 'Lightning Racer',
+                      thrill_rating: 7})
+    runner = hershey.rides.create({name: 'Storm Runner',
+                       thrill_rating: 9})
+    bear = hershey.rides.create({name: 'The Great Bear',
+                     thrill_rating: 5})
 
 
     visit "/amusement_parks/#{hershey.id}"
@@ -33,17 +30,14 @@ RSpec.describe 'As a visitor' do
   end
 
   it 'I can see the average thrill rating of rides' do
-    hershey = AmusementPark.new({name: 'Hershey Park',
+    hershey = AmusementPark.create({name: 'Hershey Park',
                                  admission_price: '$50.00'})
-    racer = Ride.new({name: 'Lightning Racer',
-                      thrill_rating: 7,
-                      amusement_parks_id: hershey.id})
+    racer = hershey.rides.create({name: 'Lightning Racer',
+                      thrill_rating: 7})
     runner = Ride.create({name: 'Storm Runner',
-                       thrill_rating: 9,
-                       amusement_parks_id: hershey.id})
+                       thrill_rating: 9})
     bear = Ride.create({name: 'The Great Bear',
-                     thrill_rating: 5,
-                        amusement_parks_id: hershey.id})
+                     thrill_rating: 5})
 
     visit "/amusement_parks/#{hershey.id}"
 
