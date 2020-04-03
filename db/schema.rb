@@ -18,8 +18,6 @@ ActiveRecord::Schema.define(version: 20200403152907) do
   create_table "amusement_parks", force: :cascade do |t|
     t.string "name"
     t.string "admission_price"
-    t.bigint "rides_id"
-    t.index ["rides_id"], name: "index_amusement_parks_on_rides_id"
   end
 
   create_table "mechanics", force: :cascade do |t|
@@ -37,9 +35,11 @@ ActiveRecord::Schema.define(version: 20200403152907) do
   create_table "rides", force: :cascade do |t|
     t.string "name"
     t.integer "thrill_rating"
+    t.bigint "amusement_parks_id"
+    t.index ["amusement_parks_id"], name: "index_rides_on_amusement_parks_id"
   end
 
-  add_foreign_key "amusement_parks", "rides", column: "rides_id"
   add_foreign_key "ride_mechanics", "mechanics", column: "mechanics_id"
   add_foreign_key "ride_mechanics", "rides", column: "rides_id"
+  add_foreign_key "rides", "amusement_parks", column: "amusement_parks_id"
 end

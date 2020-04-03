@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a visitor' do
+RSpec.describe 'As a user' do
   it 'I see a header saying All Mechanics' do
 
     visit '/mechanics'

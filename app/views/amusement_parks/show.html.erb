@@ -1,0 +1,14 @@
+<h1><%= @amusement_park.name %></h1>
+
+
+<p>Admissions: <%= @amusement_park.admission_price %></p>
+
+<h2>Rides:</h2>
+
+<ol>
+  <li>@amusement_park.ride_alphabetically_sort</li>
+</ol>
+
+<p>
+  Average Thrill Rating of Rides: <%= @amusement_park.average_rating %>/10
+</p>
