@@ -21,7 +21,7 @@ RSpec.describe 'As a visitor' do
                      thrill_rating: 5})
 
     visit "/amusement_parks/#{hershey.id}"
-
+#find a way to test the order of rides
     expect(page).to have_content('Rides:')
     expect(page).to have_content("#{racer.name}")
     expect(page).to have_content("#{runner.name}")
