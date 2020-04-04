@@ -20,13 +20,12 @@ RSpec.describe 'As a visitor' do
     bear = hershey.rides.create({name: 'The Great Bear',
                      thrill_rating: 5})
 
-
     visit "/amusement_parks/#{hershey.id}"
 
     expect(page).to have_content('Rides:')
-    expect(page).to have_content("1. #{racer.name}")
-    expect(page).to have_content("2. #{runner.name}")
-    expect(page).to have_content("3. #{bear.name}")
+    expect(page).to have_content("#{racer.name}")
+    expect(page).to have_content("#{runner.name}")
+    expect(page).to have_content("#{bear.name}")
   end
 
   it 'I can see the average thrill rating of rides' do
@@ -41,6 +40,6 @@ RSpec.describe 'As a visitor' do
 
     visit "/amusement_parks/#{hershey.id}"
 
-    expect(page).to have_content("Average Thrill Rating of Rides: 7/10")
+    expect(page).to have_content("Average Thrill Rating of Rides: 7.0/10")
   end
 end

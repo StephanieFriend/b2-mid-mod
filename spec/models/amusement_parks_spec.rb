@@ -13,7 +13,7 @@ RSpec.describe AmusementPark, type: :model do
     bear = hershey.rides.create({name: 'The Great Bear',
                         thrill_rating: 5})
 
-    # expect(hershey.ride_alphabetically_sort).to eq()
+    expect(hershey.ride_alphabetically_sort).to eq([racer, runner, bear])
     end
   end
   it'.average_rating' do

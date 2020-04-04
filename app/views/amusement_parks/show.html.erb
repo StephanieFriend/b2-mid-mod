@@ -5,8 +5,10 @@
 
 <h2>Rides:</h2>
 
-<ol>
-  <li>@amusement_park.ride_alphabetically_sort</li>
+<ol type="1">
+  <%= @amusement_park.ride_alphabetically_sort.each do |ride_sort| %>
+  <li><%= ride_sort.name %></li>
+    <% end %>
 </ol>
 
 <p>
