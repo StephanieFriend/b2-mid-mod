@@ -13,3 +13,11 @@
   </p>
 <% end %>
 </div>
+
+<h3>Add a ride to workload:</h3>
+
+<%= form_tag "/mechanics/#{@mechanic.id}", method: :post do %>
+<%= label_tag :ride_id %>
+<%= number_field_tag :ride_id %>
+<%= submit_tag 'Submit' %>
+<% end %>

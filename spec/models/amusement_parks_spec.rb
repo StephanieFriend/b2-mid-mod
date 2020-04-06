@@ -5,7 +5,6 @@ RSpec.describe AmusementPark, type: :model do
     it '.ride_alphabetically_sort' do
     hershey = AmusementPark.create({name: 'Hershey Park',
                                     admission_price: '$50.00'})
-    # binding.pry
     racer = hershey.rides.create({name: 'Lightning Racer',
                          thrill_rating: 7})
     runner = hershey.rides.create({name: 'Storm Runner',
